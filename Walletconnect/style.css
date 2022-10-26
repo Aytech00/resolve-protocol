@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background{
+  background: white;
+ 
+}
+.logo {
+  width: 70px;
+}
+
+#nav-bg{
+ 
+  padding: 1% ;
+
+}
+
+#menu-item-1{
+  color: black;
+}
+#menu-item-2{
+  color: black;
+}
+#menu-item-3{
+  color: black;
+}
+
+
+/* First section */
+#Banner {
+  text-align: center;
+  padding: 6% 10%;
+  
+  
+}
+
+.banner-image {
+  width: 45%;
+  border-radius: 15px;
+
+  
+}
+
+
+.Heading {
+  margin-bottom: 7px;
+  color: black;
+ 
+}
+
+.sub-heading{
+  color: black;
+  font-size: 15px;
+}
+
+
+.Wallet-connect {
+  padding: 6% 18%;
+  text-align: center;
+
+}
+
+/* Wallet logo */
+#images {
+  padding: 5% 10%;
+  text-align: center;
+
+  
+}
+
+.wallet-image {
+  width: 80%;
+  /* padding-bottom: 4px; */
+  /* border: 1px solid black;
+    border-radius: 15px; */
+  
+    padding: 3%;
+    border-radius: 20px;
+}
+
+.column {
+  margin-bottom: 25px;
+}
+.column-1-title {
+  text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .column-1-title {
+    text-align: center;
+    font-size: 10px;
+    text-decoration: none;
+    display: block;
+    
+
+    border-radius: 25px;
+    padding: 5px ;
+    margin-top: 10px;
+    
+  }
+
+  .column-1-title:hover{
+    
+  }
+
+
+  .column {
+    margin-bottom: 40px;
+  }
+  .f-mdd-12 {
+    font-size: 12px;
+  }
+  .f-mdd-14 {
+    font-size: 14px;
+  }
+}
+
+/* Footer  */
+#footer {
+  padding: 4%;
+  background-color:  #2d375a;
+  
+}
+#footer p{
+  text-align: center;
+  color: whitesmoke;
+}
+
+.ste-input {
+  border: 2px solid #aaa !important;
+  border-radius: 10px !important;
+}
+
+.ste-input:focus, .ste-btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(165, 42, 42, 0.25) !important;
+}
+
+[x-cloak] { display: none !important; }
