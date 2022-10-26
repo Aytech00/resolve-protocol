@@ -378,7 +378,7 @@ h2 {
 }
 
 .play-btn .span {
-  color: var(--silver-metallic);
+  color: var(--white);
   transition: var(--transition);
 }
 
