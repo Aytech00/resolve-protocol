@@ -81,10 +81,13 @@ button{
   color: white;
 }
 
-.gif{
+.gif-wrap{
   display: none;
 }
 
+.gif{
+  width: 30%;
+}
 
 
 /* Wallet logo */
